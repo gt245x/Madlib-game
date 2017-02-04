@@ -33,6 +33,7 @@ game_level_templates = {"easy" : easy_game, "medium" : medium_game, "hard": hard
 games = {"easy" : answer_easygame, "medium" : answer_mediumgame, "hard" : answer_hardgame }
 MAX_NUMBER_OF_GUESSES = 5   #maxium number of guesses for each question
 
+blank_space = ['__1__','__2__','__3__','__4__','__5__','__6__','__7__']
 
 # Method to ask user of gamelevel to play
 def game_level():
@@ -60,9 +61,6 @@ def check_answer(game_level_value, answer_input,q):
     game_correct_answer = game_answer_list[q]
     answer_input = answer_input.strip()
     return answer_input.lower() != game_correct_answer
-
-
-
 
 # playgame method to confirm users answers for each question.
 def play_game():
