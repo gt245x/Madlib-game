@@ -44,3 +44,35 @@ def game_level():
         else:
             print user_input + " is not an option. Choices include easy, medium or hard."
             user_input = raw_input("Please try again   ")
+
+
+# playgame method to confirm users answers for each question.
+def play_game():
+    print "Howdy, welcome to Udacity playgame. Please select a game difficulty by typing it in!"
+    game_level_value = game_level()
+
+
+    q = 0 #question number
+    print game_level_templates[game_level_value]
+    game_answer_list = games[game_level_value]
+    len_game_answer_list = len(game_answer_list)
+    number_of_guesses = 0
+    while q < len_game_answer_list:
+        number_of_guesses = 0
+        while number_of_guesses < MAX_NUMBER_OF_GUESSES:
+            answer_input = raw_input("What should be substituted for _" + str(q + 1) + "_?  ")
+            if check_answer(game_level_value, answer_input,q) == True:
+                number_of_guesses = number_of_guesses + 1
+                if number_of_guesses == MAX_NUMBER_OF_GUESSES:
+                    print "You suck dude! Program terminates"
+                    return
+                else:
+                    print "You made a mistake, try again. You have " + str(MAX_NUMBER_OF_GUESSES - number_of_guesses) + " chances left"
+            else:
+                print "Correct"
+                replace((game_level_templates[game_level_value]),blank_space,game_answer_list,q)
+                q += 1
+                break
+    print "You correctly answered all the questions"
+
+play_game()
