@@ -45,6 +45,24 @@ def game_level():
             print user_input + " is not an option. Choices include easy, medium or hard."
             user_input = raw_input("Please try again   ")
 
+# Function replaces the question in the quiz with the correct answer
+def replace(string,blank_space,game_answer,q):
+    i = 0
+    while i <= q:
+        replaced = string.replace(blank_space[i],game_answer[i])
+        i += 1
+        string = replaced
+    print string
+
+#Function check users answer input with the correct answer
+def check_answer(game_level_value, answer_input,q):
+    game_answer_list = games[game_level_value]
+    game_correct_answer = game_answer_list[q]
+    answer_input = answer_input.strip()
+    return answer_input.lower() != game_correct_answer
+
+
+
 
 # playgame method to confirm users answers for each question.
 def play_game():
