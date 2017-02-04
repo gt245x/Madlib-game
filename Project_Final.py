@@ -21,3 +21,13 @@ astronaut to ever hit golf on the moon is __4__. Six total space shuttle orbiter
 are Enterprise, Columbia, Challenger, Discovery, Atlantis and __5__. In 2012, __6__ a car
 sized robotic rover landed on target on Mars'''
 
+# Method to ask user of gamelevel to play
+def game_level():
+    user_input = raw_input("Possible choices include easy, medium, and hard. Make a choice:  ")
+    user_input = user_input.strip()
+    while True:
+        if user_input in ("easy", "medium", "hard"):
+            return user_input
+        else:
+            print user_input + " is not an option. Choices include easy, medium or hard."
+            user_input = raw_input("Please try again   ")
