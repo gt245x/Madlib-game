@@ -21,6 +21,19 @@ astronaut to ever hit golf on the moon is __4__. Six total space shuttle orbiter
 are Enterprise, Columbia, Challenger, Discovery, Atlantis and __5__. In 2012, __6__ a car
 sized robotic rover landed on target on Mars'''
 
+
+
+#The answers to the question in a list
+answer_easygame = ['boston','wilt chamberlain','michael jordan','hakeem olajuwon','usa','1936','10']
+answer_mediumgame = ['python','guido van rossum','boolean','def','for']
+answer_hardgame = ['sputnik','mercury','buzz aldrin','alan shepard','endeavour','curiosity']
+
+#use of dictionary to access the question and answers
+game_level_templates = {"easy" : easy_game, "medium" : medium_game, "hard": hard_game}
+games = {"easy" : answer_easygame, "medium" : answer_mediumgame, "hard" : answer_hardgame }
+MAX_NUMBER_OF_GUESSES = 5   #maxium number of guesses for each question
+
+
 # Method to ask user of gamelevel to play
 def game_level():
     user_input = raw_input("Possible choices include easy, medium, and hard. Make a choice:  ")
