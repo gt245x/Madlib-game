@@ -14,7 +14,7 @@
 ##FEATURES
 
 - Use of Python to build a game quiz.
-- 
+- Leverages the power of functions in Python and masters the ability to automate repetitive task
 
 
 
